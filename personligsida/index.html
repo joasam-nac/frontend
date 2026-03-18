@@ -1,0 +1,334 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0"
+    />
+    <title>Joakim Portfolio</title>
+    <meta
+      name="description"
+      content="Joakims hemsida"
+    />
+    <style>
+      :root {
+        --page-bg-top: #edf3f9;
+        --page-bg-bottom: #d8e4f0;
+        --window-border: #7f8b97;
+        --window-shadow: rgba(0, 0, 0, 0.22);
+        --title-top: #f7fbff;
+        --title-bottom: #d8e7f7;
+        --panel-top: #fdfefe;
+        --panel-mid: #dfeaf8;
+        --panel-bottom: #c3d7ee;
+        --panel-border: #8e9aa7;
+        --text: #1f2a36;
+        --muted: #516170;
+        --link: #0b55c4;
+        --button-top: #ffffff;
+        --button-bottom: #d8e5f2;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      html {
+        scroll-behavior: smooth;
+      }
+
+      body {
+        margin: 0;
+        padding: 24px;
+        background: linear-gradient(
+          to bottom,
+          var(--page-bg-top),
+          var(--page-bg-bottom)
+        );
+        font-family:
+          Tahoma, Verdana, Arial, sans-serif;
+        color: var(--text);
+      }
+
+      .window {
+        max-width: 980px;
+        margin: 0 auto;
+        border: 1px solid var(--window-border);
+        border-radius: 10px;
+        overflow: hidden;
+        background: #eef4fb;
+        box-shadow:
+          0 0 0 1px #f8fbff inset,
+          0 10px 30px var(--window-shadow);
+      }
+
+      .title-bar {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 8px 12px;
+        background: linear-gradient(
+          to bottom,
+          var(--title-top),
+          var(--title-bottom)
+        );
+        border-bottom: 1px solid #a4b3c1;
+      }
+
+      .title-bar strong {
+        font-size: 14px;
+      }
+
+      .window-buttons {
+        display: flex;
+        gap: 4px;
+      }
+
+      .window-button {
+        width: 28px;
+        height: 22px;
+        border: 1px solid #7d8792;
+        background: linear-gradient(to bottom, #ffffff, #dbe6f0);
+        display: grid;
+        place-items: center;
+        font-size: 12px;
+      }
+
+      .close-button {
+        border: 1px solid #9f3b32;
+        background: linear-gradient(to bottom, #f7b3a8, #d85c4a);
+        color: #ffffff;
+        font-weight: bold;
+      }
+
+      .toolbar {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+        padding: 10px 12px;
+        border-top: 1px solid #fefefe;
+        border-bottom: 1px solid #b3c0cc;
+        background: linear-gradient(to bottom, #eef5fc, #dbe7f3);
+      }
+
+      .btn {
+        display: inline-block;
+        padding: 7px 12px;
+        border: 1px solid #7f8b97;
+        background: linear-gradient(
+          to bottom,
+          var(--button-top),
+          var(--button-bottom)
+        );
+        color: #1f2a36;
+        text-decoration: none;
+        font-size: 14px;
+        box-shadow: inset 0 1px 0 #ffffff;
+      }
+
+      .btn:hover {
+        background: linear-gradient(to bottom, #ffffff, #cfdeed);
+      }
+
+      .content {
+        padding: 16px;
+      }
+
+      .panel {
+        margin-bottom: 16px;
+        padding: 16px;
+        border: 1px solid var(--panel-border);
+        background: linear-gradient(
+          to bottom,
+          var(--panel-top) 0%,
+          var(--panel-mid) 55%,
+          var(--panel-bottom) 100%
+        );
+        box-shadow: inset 0 1px 0 #ffffff;
+      }
+
+      h1,
+      h2,
+      h3,
+      p,
+      ul {
+        margin-top: 0;
+      }
+
+      h1 {
+        margin-bottom: 8px;
+        font-size: 28px;
+      }
+
+      h2 {
+        font-size: 20px;
+        margin-bottom: 10px;
+      }
+
+      .muted {
+        color: var(--muted);
+      }
+
+      .hero-actions {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        margin-top: 12px;
+      }
+
+      .projects {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+        gap: 12px;
+      }
+
+      .project-card {
+        padding: 14px;
+        border: 1px solid #8e9aa7;
+        background: linear-gradient(to bottom, #ffffff, #d8e7f6);
+        box-shadow: inset 0 1px 0 #ffffff;
+      }
+
+      .project-links {
+        display: flex;
+        gap: 8px;
+        flex-wrap: wrap;
+        margin-top: 10px;
+      }
+
+      a {
+        color: var(--link);
+      }
+
+      .status-bar {
+        padding: 8px 12px;
+        font-size: 12px;
+        color: #33404d;
+        border-top: 1px solid #fefefe;
+        background: linear-gradient(to bottom, #eaf2fa, #d4e1ee);
+      }
+
+      @media (max-width: 640px) {
+        body {
+          padding: 10px;
+        }
+
+        .content {
+          padding: 10px;
+        }
+
+        .panel {
+          padding: 12px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="window">
+      <header class="title-bar">
+        <strong>joakimsPortfolio.java</strong>
+        <div class="window-buttons" aria-hidden="true">
+          <div class="window-button">—</div>
+          <div class="window-button">□</div>
+          <div class="window-button close-button">×</div>
+        </div>
+      </header>
+
+      <main class="content">
+        <section class="panel" id="about">
+          <h1>Joakim Samuelsson</h1>
+          <p class="muted">Studerar javautveckling</p>
+          <p>
+            
+          </p>
+
+          <div class="hero-actions">
+            <a class="btn" href="https://github.com/joasam-nac">
+              GitHub
+            </a>
+            <a class="btn" href="#contact">Kontakta mig</a>
+          </div>
+        </section>
+
+        <section class="panel" id="projects">
+          <h2>Projekt</h2>
+
+          <div class="projects">
+            <article class="project-card">
+              <h3>Library System</h3>
+              <p>
+                A Java project for handling books, borrowing, and user records.
+              </p>
+              <div class="project-links">
+                <a class="btn" href="https://github.com/yourusername/project1">
+                  GitHub
+                </a>
+              </div>
+            </article>
+
+            <article class="project-card">
+              <h3>Task Manager</h3>
+              <p>
+                A small application for tracking tasks, priorities, and due
+                dates.
+              </p>
+              <div class="project-links">
+                <a class="btn" href="https://github.com/yourusername/project2">
+                  GitHub
+                </a>
+              </div>
+            </article>
+
+            <article class="project-card">
+              <h3>Komprimeringsprogram</h3>
+              <p>
+                Komprimerar PDF filer medan programmet försöker hålla kvar så mycket kvalitet som möjligt.
+              </p>
+              <div class="project-links">
+                <a class="btn" href="https://github.com/joasam-nac/PdfCompressor.git">
+                  GitHub
+                </a>
+              </div>
+            </article>
+          </div>
+        </section>
+
+        <section class="panel" id="cv">
+          <h2>CV</h2>
+          <p>
+            Java development student with interest in backend systems,
+            object-oriented design, and databases.
+          </p>
+
+          <h3>Skills</h3>
+          <ul>
+            <li>Java</li>
+            <li>SQL</li>
+            <li>Git</li>
+            <li>HTML</li>
+            <li>Object-oriented programming</li>
+          </ul>
+
+          <h3>Education</h3>
+          <ul>
+            <li>Java development studies</li>
+          </ul>
+
+          <p>
+            <a class="btn" href="cv.pdf">Download CV</a>
+          </p>
+        </section>
+
+        <section class="panel" id="contact">
+          <h2>Kontakt</h2>
+        
+          <p>Email: <a href="mailto:joakim@samuelsson.sh">joakim@samuelsson.sh</a></p>
+          <p>Email: <a href="mailto:joakim.samuelsson@yh.nackademin.se">joakim.samuelsson@yh.nackademin.se</a></p>
+        </section>
+      </main>
+
+      <footer class="status-bar">Status: Söker praktikplats</footer>
+    </div>
+  </body>
+</html>

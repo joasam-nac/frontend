@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0"
+    />
+    <title>Checkout</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div>
+        <h1>Checkout</h1>
+        <p>Review your order and enter your information.</p>
+      </div>
+      <a href="index.html" class="secondary-link">← Back to shop</a>
+    </header>
+
+    <main class="checkout-layout">
+      <section class="checkout-section">
+        <h2>Order Summary</h2>
+        <div id="checkout-cart-items" class="cart-items"></div>
+
+        <div class="total-row checkout-total">
+          <span>Total</span>
+          <strong id="checkout-total">$0.00</strong>
+        </div>
+      </section>
+
+      <section class="checkout-section">
+        <h2>Your Information</h2>
+
+        <form id="checkout-form" class="checkout-form">
+          <label>
+            Full name
+            <input type="text" id="name" required />
+          </label>
+
+          <label>
+            Email
+            <input type="email" id="email" required />
+          </label>
+
+          <label>
+            Address
+            <input type="text" id="address" required />
+          </label>
+
+          <label>
+            City
+            <input type="text" id="city" required />
+          </label>
+
+          <label>
+            Postal code
+            <input type="text" id="postalCode" required />
+          </label>
+
+          <button type="submit" class="primary-btn">Place Order</button>
+        </form>
+
+        <div id="message" class="message"></div>
+      </section>
+    </main>
+
+    <script src="checkout.js"></script>
+  </body>
+</html>
