@@ -1,0 +1,74 @@
+[
+  {
+    "id": 1,
+    "name": "The Python-Based Laboratory",
+    "categories": ["böcker", "böcker: kurslitteratur", "böcker: programmering"],
+    "description": "The Python-Based Laboratory: A Hands-On Guide for Scientists and Engineers provides a learn-by-doing approach to acquiring the Python programming skills needed to implement computer-controlled experimental work.",
+    "price": 574,
+    "image": "items/1.jpg"
+  },
+  {
+    "id": 2,
+    "name": "Reinforcement Learning",
+    "categories": ["böcker", "böcker: kurslitteratur", "böcker: programmering"],
+    "description": "The significantly expanded and updated new edition of a widely used text on reinforcement learning, one of the most active research areas in artificial intelligence.",
+    "price": 1281,
+    "image": "items/2.jpg"
+  },
+  {
+    "id": 3,
+    "name": "Learning Web Design",
+    "categories": ["böcker", "böcker: kurslitteratur", "böcker: programmering"],
+    "description": "Do you want to build web pages but have no prior experience? This friendly guide is the perfect place to start",
+    "price": 572,
+    "image": "items/3.jpg"
+  },
+  {
+    "id": 4,
+    "name": "Python från början",
+    "categories": ["böcker", "böcker: kurslitteratur", "böcker: programmering"],
+    "description": "Boken är avsedd som kurslitteratur i grundläggande programmeringskurser, till exempel i en första kurs på universitet eller högskolan, gymnasieskolans Programmering 1 och 2 och matematikkurser med programmering.",
+    "price": 513,
+    "image": "items/4.jpg"
+  },
+  {
+    "id": 5,
+    "name": "Örter: att odla och äta",
+    "categories": ["böcker", "böcker: mat & dryck", "böcker: trädgårdsskötsel växter"],
+    "description": "Örter är det enklaste sättet att lyfta smaken i din matlagning och gör varje rätt till en klorofyllbomb av doft och färg.",
+    "price": 249.90,
+    "image": "items/5.jpg"
+  },
+  {
+    "id": 6,
+    "name": "En egen trädgård",
+    "categories": ["böcker", "böcker: trädgårdsskötsel växter"],
+    "description": "En självhjälpsbok för trädgårdsägaren. En förtäckt självbiografi i form av en odlingsmanual. En bok om att skapa en egen trädgård. En bok om att hitta hem.",
+    "price": 239.90,
+    "image": "items/6.jpg"
+  },
+  {
+    "id": 7,
+    "name": "Samsung 57\" Odyssey G9 Mini LED DUHD (1000R) 240 Hz",
+    "categories": ["bildskärm"],
+    "description": "Upplev spel som känns mer realistiska än omvärlden. Världens första dubbla UHD-skärm omsluter dig med en superbred 57-tumsskärm och 1000R kurvatur. Kraften hos Quantum Mini LED och HDR 1000 ger enastående nivåer av visuell precision, definition och ljusstyrka. Känn snabbheten med 240 Hz uppdateringsfrekvens, 1 ms responstid och FreeSync Premium Pro.",
+    "price": 29990,
+    "image": "items/7.webp"
+  },
+  {
+    "id": 8,
+    "name": "Corsair Xeneon Edge 14,5\" LCD-pekskärm Svart",
+    "categories": ["bildskärm"],
+    "description": "CORSAIR XENEON EDGE 14,5\" är en ultrabred 14,5-tums LCD-pekskärm med upplösningen 2560 × 720 och 60 Hz, designad som sekundär display för chassi, skrivbord eller streamingrigg.",
+    "price": 2990,
+    "image": "items/8.webp"
+  },
+  {
+    "id": 9,
+    "name": "Kingston 256GB (8x32GB) DDR5 6400MHz CL32 FURY Renegade Pro ECC XMP 3.0",
+    "categories": ["primärminne"],
+    "description": "Kingston FURY Renegade Pro ECC är en minnesserie för de mest krävande systemen där dem har kombinerat hög prestanda med pålitligheten som ECC medför och är de perfekta minnena för de mest avancerade systemen inom datacenter och workstations.",
+    "price": 69999.99,
+    "image": "items/9.webp"
+  }
+]

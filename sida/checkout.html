@@ -1,70 +1,70 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="sv">
   <head>
     <meta charset="UTF-8" />
     <meta
       name="viewport"
       content="width=device-width, initial-scale=1.0"
     />
-    <title>Checkout</title>
+    <title>Kassa</title>
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
     <header class="site-header">
       <div>
-        <h1>Checkout</h1>
-        <p>Review your order and enter your information.</p>
+        <h1>Kassa</h1>
+        <p>Granska din beställning och fyll i dina uppgifter.</p>
       </div>
-      <a href="index.html" class="secondary-link">← Back to shop</a>
+      <a href="index.html" class="secondary-link">← Tillbaka till shoppen</a>
     </header>
 
     <main class="checkout-layout">
       <section class="checkout-section">
-        <h2>Order Summary</h2>
+        <h2>Kundvagn</h2>
         <div id="checkout-cart-items" class="cart-items"></div>
 
         <div class="total-row checkout-total">
-          <span>Total</span>
-          <strong id="checkout-total">$0.00</strong>
+          <span>Totalt</span>
+          <strong id="checkout-total">0.00 kr</strong>
         </div>
       </section>
 
       <section class="checkout-section">
-        <h2>Your Information</h2>
+        <h2>Dina uppgifter</h2>
 
         <form id="checkout-form" class="checkout-form">
           <label>
-            Full name
+            Fullständigt namn
             <input type="text" id="name" required />
           </label>
 
           <label>
-            Email
+            E-post
             <input type="email" id="email" required />
           </label>
 
           <label>
-            Address
+            Adress
             <input type="text" id="address" required />
           </label>
 
           <label>
-            City
+            Stad
             <input type="text" id="city" required />
           </label>
 
           <label>
-            Postal code
+            Postnummer
             <input type="text" id="postalCode" required />
           </label>
 
-          <button type="submit" class="primary-btn">Place Order</button>
+          <button type="submit" class="primary-btn">Lägg beställning</button>
         </form>
 
         <div id="message" class="message"></div>
       </section>
     </main>
 
-    <script src="checkout.js"></script>
+    <script type="module" src="./js/checkout.js"></script>
   </body>
 </html>

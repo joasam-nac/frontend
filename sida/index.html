@@ -1,26 +1,26 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="sv">
   <head>
     <meta charset="UTF-8" />
     <meta
       name="viewport"
       content="width=device-width, initial-scale=1.0"
     />
-    <title>Joakim S.</title>
+    <title>Joakims Webbshop</title>
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
     <header class="site-header">
       <div>
         <h1>Joakims Webbshop</h1>
-        <p>Det senaste inom elektronik</p>
+        <p>Jag säljer allt viktigt DU behöver!</p>
       </div>
 
       <div class="cart-menu">
         <button
           id="cart-toggle"
           class="cart-icon-btn"
-          aria-label="Open cart"
+          aria-label="Öppna kundvagn"
           aria-expanded="false"
           aria-controls="cart-dropdown"
         >
@@ -45,23 +45,23 @@
 
         <div id="cart-dropdown" class="cart-dropdown hidden">
           <div class="cart-dropdown-header">
-            <h2>Your Cart</h2>
+            <h2>Kundvagn</h2>
           </div>
 
           <div id="cart-items" class="cart-items"></div>
 
           <div class="cart-dropdown-footer">
             <div class="total-row">
-              <span>Total</span>
-              <strong id="cart-total">$0.00</strong>
+              <span>Totalt</span>
+              <strong id="cart-total">0 kr</strong>
             </div>
 
             <div class="cart-buttons">
               <button id="clear-cart-btn" class="secondary-btn">
-                Clear Cart
+                Töm kundvagn
               </button>
               <a id="checkout-link" class="primary-btn" href="checkout.html">
-                Checkout
+                Till kassan
               </a>
             </div>
           </div>
@@ -71,14 +71,14 @@
 
     <main class="browse-layout">
       <section class="shop-section">
-        <h2>Categories</h2>
+        <h2>Kategorier</h2>
         <div id="category-list" class="category-list"></div>
 
-        <h2>Products</h2>
+        <h2>Produkter</h2>
         <div id="product-list" class="product-list"></div>
       </section>
     </main>
 
-    <script src="script.js"></script>
+    <script type="module" src="./js/main.js"></script>
   </body>
 </html>
