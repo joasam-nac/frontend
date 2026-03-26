@@ -7,61 +7,127 @@
       content="width=device-width, initial-scale=1.0"
     />
     <title>Kassa</title>
-    <link rel="stylesheet" href="style.css" />
+    <script src="https://cdn.tailwindcss.com"></script>
   </head>
-  <body>
-    <header class="site-header">
-      <div>
-        <h1>Kassa</h1>
-        <p>Granska din beställning och fyll i dina uppgifter.</p>
+  <body class="min-h-screen bg-amber-50 text-gray-900">
+    <header class="sticky top-0 z-40 border-b-4 border-black bg-yellow-300">
+      <div
+        class="mx-auto flex max-w-7xl items-center justify-between gap-4 px-4 py-4 sm:px-6 lg:px-8"
+      >
+        <div>
+          <h1 class="text-3xl font-black tracking-tight text-red-600">Kassa</h1>
+          <p class="mt-1 text-sm font-medium text-gray-800">
+            Granska din beställning och fyll i dina uppgifter.
+          </p>
+        </div>
+
+        <a
+          href="index.html"
+          class="text-sm font-bold text-blue-700 underline-offset-4 hover:underline"
+        >
+          ← Tillbaka till shoppen
+        </a>
       </div>
-      <a href="index.html" class="secondary-link">← Tillbaka till shoppen</a>
     </header>
 
-    <main class="checkout-layout">
-      <section class="checkout-section">
-        <h2>Kundvagn</h2>
-        <div id="checkout-cart-items" class="cart-items"></div>
+    <main
+      class="mx-auto grid max-w-7xl grid-cols-1 gap-6 px-4 py-8 sm:px-6 lg:grid-cols-2 lg:px-8"
+    >
+      <section
+        class="rounded-3xl border-4 border-black bg-pink-100 p-6 shadow-[8px_8px_0_0_#000]"
+      >
+        <div class="border-b-4 border-black pb-4">
+          <h2 class="text-2xl font-black text-blue-600">Kundvagn</h2>
+          <p class="mt-1 text-sm text-gray-700">Kontrollera din beställning</p>
+        </div>
 
-        <div class="total-row checkout-total">
-          <span>Totalt</span>
-          <strong id="checkout-total">0.00 kr</strong>
+        <div id="checkout-cart-items" class="mt-4 space-y-3"></div>
+
+        <div class="mt-6 flex items-center justify-between border-t-4 border-black pt-4">
+          <span class="text-sm font-bold text-gray-800">Totalt</span>
+          <strong id="checkout-total" class="text-lg font-black text-black">
+            0.00 kr
+          </strong>
         </div>
       </section>
 
-      <section class="checkout-section">
-        <h2>Dina uppgifter</h2>
+      <section
+        class="rounded-3xl border-4 border-black bg-cyan-100 p-6 shadow-[8px_8px_0_0_#000]"
+      >
+        <div class="border-b-4 border-black pb-4">
+          <h2 class="text-2xl font-black text-red-600">Dina uppgifter</h2>
+          <p class="mt-1 text-sm text-gray-700">
+            Fyll i informationen för att slutföra köpet
+          </p>
+        </div>
 
-        <form id="checkout-form" class="checkout-form">
-          <label>
-            Fullständigt namn
-            <input type="text" id="name" required />
+        <form id="checkout-form" class="mt-6 space-y-4" novalidate>
+          <label class="block">
+            <span class="mb-1.5 block text-sm font-bold text-gray-900">
+              Fullständigt namn
+            </span>
+            <input
+              type="text"
+              id="name"
+              class="block w-full rounded-2xl border-4 border-black bg-white px-3 py-2.5 text-sm shadow-[4px_4px_0_0_#000] outline-none"
+            />
           </label>
 
-          <label>
-            E-post
-            <input type="email" id="email" required />
+          <label class="block">
+            <span class="mb-1.5 block text-sm font-bold text-gray-900">
+              E-post
+            </span>
+            <input
+              type="text"
+              id="email"
+              class="block w-full rounded-2xl border-4 border-black bg-white px-3 py-2.5 text-sm shadow-[4px_4px_0_0_#000] outline-none"
+            />
           </label>
 
-          <label>
-            Adress
-            <input type="text" id="address" required />
+          <label class="block">
+            <span class="mb-1.5 block text-sm font-bold text-gray-900">
+              Adress
+            </span>
+            <input
+              type="text"
+              id="address"
+              class="block w-full rounded-2xl border-4 border-black bg-white px-3 py-2.5 text-sm shadow-[4px_4px_0_0_#000] outline-none"
+            />
           </label>
 
-          <label>
-            Stad
-            <input type="text" id="city" required />
-          </label>
+          <div class="grid grid-cols-1 gap-4 sm:grid-cols-2">
+            <label class="block">
+              <span class="mb-1.5 block text-sm font-bold text-gray-900">
+                Stad
+              </span>
+              <input
+                type="text"
+                id="city"
+                class="block w-full rounded-2xl border-4 border-black bg-white px-3 py-2.5 text-sm shadow-[4px_4px_0_0_#000] outline-none"
+              />
+            </label>
 
-          <label>
-            Postnummer
-            <input type="text" id="postalCode" required />
-          </label>
+            <label class="block">
+              <span class="mb-1.5 block text-sm font-bold text-gray-900">
+                Postnummer
+              </span>
+              <input
+                type="text"
+                id="postalCode"
+                class="block w-full rounded-2xl border-4 border-black bg-white px-3 py-2.5 text-sm shadow-[4px_4px_0_0_#000] outline-none"
+              />
+            </label>
+          </div>
 
-          <button type="submit" class="primary-btn">Lägg beställning</button>
+          <button
+            type="submit"
+            class="inline-flex items-center rounded-2xl border-4 border-black bg-green-400 px-4 py-2.5 text-sm font-black text-black shadow-[4px_4px_0_0_#000] transition hover:translate-x-[1px] hover:translate-y-[1px] hover:shadow-none"
+          >
+            Lägg beställning
+          </button>
         </form>
 
-        <div id="message" class="message"></div>
+        <div id="message" class="mt-4 hidden rounded-2xl p-3 text-sm"></div>
       </section>
     </main>
 

@@ -26,8 +26,11 @@ async function loadItems() {
     render(state);
   } catch (error) {
     console.error("Error loading items:", error);
-    ui.productList.innerHTML =
-      '<p class="empty-state">Could not load products.</p>';
+    ui.productList.innerHTML = `
+      <p class="italic text-gray-500">
+        Kunde inte ladda produkter.
+      </p>
+    `;
   }
 }
 

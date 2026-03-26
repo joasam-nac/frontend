@@ -7,75 +7,113 @@
       content="width=device-width, initial-scale=1.0"
     />
     <title>Joakims Webbshop</title>
-    <link rel="stylesheet" href="style.css" />
+    <script src="https://cdn.tailwindcss.com"></script>
   </head>
-  <body>
-    <header class="site-header">
-      <div>
-        <h1>Joakims Webbshop</h1>
-        <p>Jag säljer allt viktigt DU behöver!</p>
-      </div>
+  <body class="min-h-screen bg-amber-50 text-gray-900">
+    <header class="sticky top-0 z-40 border-b-4 border-black bg-yellow-300">
+      <div
+        class="mx-auto flex max-w-7xl items-center justify-between gap-4 px-4 py-4 sm:px-6 lg:px-8"
+      >
+        <div>
+          <h1 class="text-3xl font-black tracking-tight text-red-600">
+            Joakims Webbshop
+          </h1>
+          <p class="mt-1 text-sm font-medium text-gray-800">
+            Jag säljer allt viktigt DU behöver!
+          </p>
+        </div>
 
-      <div class="cart-menu">
-        <button
-          id="cart-toggle"
-          class="cart-icon-btn"
-          aria-label="Öppna kundvagn"
-          aria-expanded="false"
-          aria-controls="cart-dropdown"
-        >
-          <svg
-            class="cart-icon"
-            viewBox="0 0 24 24"
-            aria-hidden="true"
+        <div class="relative">
+          <button
+            id="cart-toggle"
+            type="button"
+            aria-label="Öppna kundvagn"
+            aria-expanded="false"
+            aria-controls="cart-dropdown"
+            class="relative inline-flex h-12 w-12 items-center justify-center rounded-2xl border-4 border-black bg-blue-500 text-white shadow-[4px_4px_0_0_#000] transition hover:translate-x-[1px] hover:translate-y-[1px] hover:shadow-none"
           >
-            <path
-              d="M3 4h2l2.2 9.2a1 1 0 0 0 1 .8h8.7a1 1 0 0 0 1-.7L21 7H7"
-              fill="none"
-              stroke="currentColor"
-              stroke-width="2"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-            />
-            <circle cx="10" cy="19" r="1.5" fill="currentColor" />
-            <circle cx="17" cy="19" r="1.5" fill="currentColor" />
-          </svg>
-          <span id="cart-count" class="cart-badge">0</span>
-        </button>
+            <svg class="h-5 w-5" viewBox="0 0 24 24" aria-hidden="true">
+              <path
+                d="M3 4h2l2.2 9.2a1 1 0 0 0 1 .8h8.7a1 1 0 0 0 1-.7L21 7H7"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+              <circle cx="10" cy="19" r="1.5" fill="currentColor" />
+              <circle cx="17" cy="19" r="1.5" fill="currentColor" />
+            </svg>
 
-        <div id="cart-dropdown" class="cart-dropdown hidden">
-          <div class="cart-dropdown-header">
-            <h2>Kundvagn</h2>
-          </div>
+            <span
+              id="cart-count"
+              class="absolute -right-2 -top-2 min-w-6 rounded-full border-2 border-black bg-red-500 px-1.5 text-center text-xs font-bold leading-5 text-white"
+            >
+              0
+            </span>
+          </button>
 
-          <div id="cart-items" class="cart-items"></div>
-
-          <div class="cart-dropdown-footer">
-            <div class="total-row">
-              <span>Totalt</span>
-              <strong id="cart-total">0 kr</strong>
+          <div
+            id="cart-dropdown"
+            class="absolute right-0 top-16 z-50 hidden w-96 max-w-[calc(100vw-2rem)] overflow-hidden rounded-3xl border-4 border-black bg-white shadow-[8px_8px_0_0_#000]"
+          >
+            <div class="border-b-4 border-black bg-red-500 px-5 py-4 text-white">
+              <h2 class="text-lg font-black">Kundvagn</h2>
+              <p class="mt-1 text-sm">Produkter du har lagt till</p>
             </div>
 
-            <div class="cart-buttons">
-              <button id="clear-cart-btn" class="secondary-btn">
-                Töm kundvagn
-              </button>
-              <a id="checkout-link" class="primary-btn" href="checkout.html">
-                Till kassan
-              </a>
+            <div
+              id="cart-items"
+              class="max-h-96 space-y-3 overflow-y-auto bg-white px-5 py-4"
+            ></div>
+
+            <div class="border-t-4 border-black bg-cyan-200 px-5 py-4">
+              <div class="mb-4 flex items-center justify-between">
+                <span class="text-sm font-bold text-gray-800">Totalt</span>
+                <strong id="cart-total" class="text-base font-black text-black">
+                  0 kr
+                </strong>
+              </div>
+
+              <div class="flex flex-wrap gap-2">
+                <button
+                  id="clear-cart-btn"
+                  type="button"
+                  class="inline-flex items-center rounded-2xl border-4 border-black bg-white px-4 py-2 text-sm font-bold text-black shadow-[4px_4px_0_0_#000] transition hover:translate-x-[1px] hover:translate-y-[1px] hover:shadow-none"
+                >
+                  Töm kundvagn
+                </button>
+
+                <a
+                  id="checkout-link"
+                  href="checkout.html"
+                  class="inline-flex items-center rounded-2xl border-4 border-black bg-green-400 px-4 py-2 text-sm font-bold text-black shadow-[4px_4px_0_0_#000] transition hover:translate-x-[1px] hover:translate-y-[1px] hover:shadow-none"
+                >
+                  Till kassan
+                </a>
+              </div>
             </div>
           </div>
         </div>
       </div>
     </header>
 
-    <main class="browse-layout">
-      <section class="shop-section">
-        <h2>Kategorier</h2>
-        <div id="category-list" class="category-list"></div>
+    <main class="mx-auto max-w-7xl px-4 py-8 sm:px-6 lg:px-8">
+      <section class="rounded-3xl border-4 border-black bg-white p-6 shadow-[8px_8px_0_0_#000]">
+        <div class="flex flex-col gap-6">
+          <div>
+            <h2 class="text-2xl font-black text-blue-600">Kategorier</h2>
+            <div id="category-list" class="mt-4 flex flex-wrap gap-3"></div>
+          </div>
 
-        <h2>Produkter</h2>
-        <div id="product-list" class="product-list"></div>
+          <div>
+            <h2 class="text-2xl font-black text-red-600">Produkter</h2>
+            <div
+              id="product-list"
+              class="mt-4 grid grid-cols-1 gap-6 sm:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4"
+            ></div>
+          </div>
+        </div>
       </section>
     </main>
 
